@@ -19,7 +19,7 @@
      class="center rounded border border-primary">
   <h6 style="color: black"><%= t(:'Узнайте прогноз погоды в городе на ближайшее время')%></h6>
   <%= form_tag('lab/output', method: 'get',locale: I18n.locale) do %>
-    <%= t(:'Введите название города')%><mark> <u> <%=t(:'на английском языке') %></mark> </u> </p>
+    <%= t(:'Введите название города')%><mark> <u> <%=t(:'на английском или русских языках') %></mark> </u> </p>
       <%= text_field_tag(:city_name, value="Rzhev") %>
       <%= submit_tag t(:'Найти') %>
   <% end %>
