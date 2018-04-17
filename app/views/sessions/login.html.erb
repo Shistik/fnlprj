@@ -1,0 +1,24 @@
+<div class="center">
+  <h1 style="color: white"><%= t(:'Вход')%></h1>
+    <%= form_tag url_for(controller: :sessions, action: :create), method: 'post' do %>
+      <table>
+        <tr>
+          <td><%= label_tag 'Name' %></td>
+          <td><%= text_field_tag :name %></td>
+        </tr>
+        <tr>
+          <td><%= label_tag 'password' %></td>
+          <td><%= password_field_tag 'password' %></td>
+        </tr>
+      </table>
+      <%= submit_tag 'Логин' %>
+    <% end %>
+    <br/>
+    <%= form_tag url_for(controller: 'users', action: 'new'), :method => 'get' do %>
+      <%= submit_tag 'Создать пользователя' %>
+    <% end %>
+
+  <br/>
+  <li><%= link_to 'Русский', {locale: :ru}%></li>
+  <li><%= link_to 'English', {locale: :en}%></li>
+</div>

@@ -1,0 +1,26 @@
+<div class="center">
+  <h1 class="display-5" style="color: orangered"><%= t(:'прогноз погоды в городе')%> <%= @city_name %>   <%= t(:'на ближайшее время')%></h1>
+  <table class="table table-hover table-bordered  table-sm text-center">
+    <thead class="thead-dark">
+      <th><%= t(:'время')%></th>
+      <th> <%= t(:'Температура в цельсиях')%></th>
+      <th> <%= t(:'давление')%></th>
+      <th> <%= t(:'влажность')%></th>
+      <th> <%= t(:'скорость ветра(м/с)')%></th>
+    </tr>
+    </thead >
+    <tbody bgcolor="#00bfff">
+    <% @temp.each do |wt|%>
+        <tr><td><%= wt[0] %></td><td><%= wt[1] %></td><td><%= wt[2] %></td><td><%= wt[3] %></td><td><%= wt[4] %></td></tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= form_tag(root_path, method: 'get') do %>
+      <%= submit_tag t(:'Вернуться на главную') %>
+  <% end %>
+  <br/>
+  <%= form_tag url_for(controller: 'sessions', action: 'logout'), :method => 'get' do %>
+      <%= submit_tag t(:'Выйти') %>
+  <% end %>
+</div>

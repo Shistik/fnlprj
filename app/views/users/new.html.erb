@@ -1,0 +1,9 @@
+<div class="center">
+  <h1 style="color: white">Create New User</h1>
+
+  <%= render 'form', user: @user %>
+  <br/>
+  <%= form_tag(users_path, method: 'get') do %>
+      <%= submit_tag 'Вернуться назад' %>
+  <% end %>
+</div>

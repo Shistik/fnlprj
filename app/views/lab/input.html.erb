@@ -1,0 +1,34 @@
+<div class="center">
+  <h1  class="display-4" style="color: orangered"><em><%= t(:'Погода городов россии')%></em></h1>
+  <table class="table table-hover text-center" >
+    <thead class="thead-light">
+      <tr>
+        <th><%= t(:"Название города")%></th>
+        <th><%= t(:'Температура в цельсиях')%></th>
+        <th><%= t(:'скорость ветра(м/с)')%></th>
+      </tr>
+    </thead>
+    <tbody bgcolor="#7fffd4">
+    <% @city_name.each_index do |x|%>
+        <tr><td><%= @info[x][2] %></td><td><%= @info[x][0] %></td><td><%= @info[x][1] %></td></tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+<div style="background-color:#EC7C26;width: 400px;margin: 10px;border-color: #005cbf",align="left" ,
+     class="center rounded border border-primary">
+  <h6 style="color: black"><%= t(:'Узнайте прогноз погоды в городе на ближайшее время')%></h6>
+  <%= form_tag('lab/output', method: 'get',locale: I18n.locale) do %>
+    <%= t(:'Введите название города')%><mark> <u> <%=t(:'на английском языке') %></mark> </u> </p>
+      <%= text_field_tag(:city_name, value="Rzhev") %>
+      <%= submit_tag t(:'Найти') %>
+  <% end %>
+  <br/>
+  <%= form_tag url_for(controller: 'sessions', action: 'logout'), :method => 'get' do %>
+      <%= submit_tag t(:'Выйти') %>
+  <% end %>
+
+  <br/>
+    <li><%= link_to 'Русский', {locale: :ru} %></li>
+    <li><%= link_to 'English', {locale: :en} %></li>
+</div>
