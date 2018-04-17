@@ -36,7 +36,7 @@ en:
   Температура в цельсиях: "Temperature in Celsius"
   Узнайте прогноз погоды в городе на ближайшее время: "Learn the weather in any city for near time"
   Введите название города: "Enter the city name:"
-  на английском или русских языках: "using English or Russian:"
+  на английском языке: "using English:"
   скорость ветра(м/с): "wind speed(m/s)"
   Найти: "Find a city"
   Выйти: "Sign out"
@@ -49,3 +49,7 @@ en:
   применить: "apply"
   выберите язык: "choose language"
   Вернуться на главную: 'back to root'
+  Name: 'Name'
+  password: 'password'
+  Логин: 'sign in'
+  Создать пользователя: 'sign up'
