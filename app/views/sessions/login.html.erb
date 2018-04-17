@@ -3,22 +3,24 @@
     <%= form_tag url_for(controller: :sessions, action: :create), method: 'post' do %>
       <table>
         <tr>
-          <td><%= label_tag 'Name' %></td>
+          <td><%= label_tag t(:'Name') %></td>
           <td><%= text_field_tag :name %></td>
         </tr>
         <tr>
-          <td><%= label_tag 'password' %></td>
+          <td><%= label_tag t(:'password') %></td>
           <td><%= password_field_tag 'password' %></td>
         </tr>
       </table>
-      <%= submit_tag 'Логин' %>
+      <%= submit_tag t(:'Логин') %>
     <% end %>
     <br/>
     <%= form_tag url_for(controller: 'users', action: 'new'), :method => 'get' do %>
-      <%= submit_tag 'Создать пользователя' %>
+      <%= submit_tag t(:'Создать пользователя') %>
     <% end %>
 
   <br/>
-  <li><%= link_to 'Русский', {locale: :ru}%></li>
-  <li><%= link_to 'English', {locale: :en}%></li>
+  <%= form_tag({}, {:method => :get}) do %>
+    <%= select_tag :new_locale, options_for_select(I18n.available_locales, I18n.locale), :onchange => "this.form.submit();" %>
+
+  <% end %>
 </div>
