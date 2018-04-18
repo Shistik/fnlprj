@@ -29,6 +29,8 @@
   <% end %>
 
   <br/>
-    <li><%= link_to 'Русский', {locale: :ru} %></li>
-    <li><%= link_to 'English', {locale: :en} %></li>
+ <%= form_tag({}, {:method => :get}) do %>
+    <%= select_tag :new_locale, options_for_select(I18n.available_locales, I18n.locale), :onchange => "this.form.submit();" %>
+
+  <% end %>
 </div>
